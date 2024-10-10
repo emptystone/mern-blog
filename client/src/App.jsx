@@ -7,10 +7,14 @@ import Projects from './pages/Projects';
 import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
 import Search from './pages/Search';
+import Header from './components/Header';
+import Tryss from './components/Tryss';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Header />
+      <Tryss />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
