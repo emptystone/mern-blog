@@ -16,7 +16,6 @@ export const signup = async (req, res, next) => {
   ) {
     next(errorHandler(400, 'All fields are required'));
   }
-
   const hashedPassword = bcryptjs.hashSync(password, 10);
 
   const newUser = new User({
@@ -29,6 +28,12 @@ export const signup = async (req, res, next) => {
     await newUser.save();
     res.json('Signup successful');
   } catch (error) {
+    if (error.code === 11000) {
+      // MongoDB duplicate key error code
+      return next(
+        errorHandler(409, 'Username already taken')
+      );
+    }
     next(error);
   }
 };
