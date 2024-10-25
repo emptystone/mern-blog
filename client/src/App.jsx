@@ -12,6 +12,7 @@ import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
 import Search from './pages/Search';
 import Header from './components/Header';
+import Footer from './components/Footer';
 // import Tryss from './components/Tryss';
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
         />
         <Route path="/projects" element={<Projects />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
