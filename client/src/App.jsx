@@ -13,6 +13,7 @@ import CreatePost from './pages/CreatePost';
 import Search from './pages/Search';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PrivateRoute from './components/PrivateRoute';
 // import Tryss from './components/Tryss';
 
 export default function App() {
@@ -32,6 +33,12 @@ export default function App() {
           element={<CreatePost />}
         />
         <Route path="/projects" element={<Projects />} />
+        <Route element={<PrivateRoute />}>
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+        </Route>
       </Routes>
       <Footer />
     </BrowserRouter>
