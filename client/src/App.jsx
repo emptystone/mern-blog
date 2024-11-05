@@ -10,11 +10,14 @@ import Dashboard from './pages/Dashboard';
 import Projects from './pages/Projects';
 import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
+import UpdatePost from './pages/UpdatePost';
 import Search from './pages/Search';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
+import PostPage from './pages/PostPage';
+
 // import Tryss from './components/Tryss';
 
 export default function App() {
@@ -33,7 +36,10 @@ export default function App() {
             path="/create-post"
             element={<CreatePost />}
           />
-          {/* <Route path='/update-post/:postId' element={<UpdatePost />} /> */}
+          <Route
+            path="/update-post/:postId"
+            element={<UpdatePost />}
+          />
         </Route>
 
         <Route path="/projects" element={<Projects />} />
@@ -43,6 +49,10 @@ export default function App() {
             element={<Dashboard />}
           />
         </Route>
+        <Route
+          path="/post/:postSlug"
+          element={<PostPage />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
