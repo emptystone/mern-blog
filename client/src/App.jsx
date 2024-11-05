@@ -14,6 +14,7 @@ import Search from './pages/Search';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
+import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
 // import Tryss from './components/Tryss';
 
 export default function App() {
@@ -27,10 +28,13 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
-        <Route
-          path="/create-post"
-          element={<CreatePost />}
-        />
+        <Route element={<OnlyAdminPrivateRoute />}>
+          <Route
+            path="/create-post"
+            element={<CreatePost />}
+          />
+          {/* <Route path='/update-post/:postId' element={<UpdatePost />} /> */}
+        </Route>
 
         <Route path="/projects" element={<Projects />} />
         <Route element={<PrivateRoute />}>
