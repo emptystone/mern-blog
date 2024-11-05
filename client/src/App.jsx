@@ -27,11 +27,11 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route
           path="/create-post"
           element={<CreatePost />}
         />
+
         <Route path="/projects" element={<Projects />} />
         <Route element={<PrivateRoute />}>
           <Route
